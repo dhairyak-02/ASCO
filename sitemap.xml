@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://yourdomain.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/services.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/sectors.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/meet-the-team.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/careers.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/contact.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Sub Services -->
+  <url>
+    <loc>https://yourdomain.com/accounting-audit.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/business-tax-planning.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/gst-tds.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/international-tax.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/corporate-compliance.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/corporate-finance.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/film-rebate.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/private-clients.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/turnaround-restructuring.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://yourdomain.com/uae-vat.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+</urlset>
