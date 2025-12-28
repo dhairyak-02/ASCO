@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anil Sekhri & Co. | Chartered Accountants</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+        color: #334155;
+      }
+      h1,
+      h2,
+      h3,
+      .serif {
+        font-family: "Playfair Display", serif;
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #ca8a04;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after,
+      .nav-active::after {
+        width: 100%;
+      }
+      .nav-active {
+        color: #0f172a;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="site-header"></div>
+
+    <!-- ===== HOME SECTION (VERBATIM) ===== -->
+    <section>
+      <div
+        class="relative bg-slate-900 text-white py-24 lg:py-40 overflow-hidden"
+      >
+        <div
+          class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 skew-x-12 opacity-50 transform translate-x-20"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-3xl">
+            <span
+              class="inline-block py-1 px-3 border border-yellow-500/50 rounded-full text-yellow-500 text-xs font-bold tracking-widest uppercase mb-6"
+              >Since 1983</span
+            >
+            <h1 class="text-5xl lg:text-7xl font-bold mb-8 leading-tight">
+              More Than just<br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"
+                >Accounts & Tax</span
+              >
+            </h1>
+            <p class="text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl">
+              At Anil Sekhri & Co. we work hard to help our clients thrive.
+              Nobody understands your personal affairs or business like you do.
+              So we invest the time to get to know you, your objectives and
+              priorities to ensure the advice you get from us is just what you
+              need.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="services.html"
+                class="bg-yellow-600 text-white px-8 py-3 rounded-sm font-semibold hover:bg-yellow-700 transition-all text-center"
+              >
+                What We Can Do For You
+              </a>
+              <a
+                href="contact.html"
+                class="bg-transparent border border-white text-white px-8 py-3 rounded-sm font-semibold hover:bg-white hover:text-slate-900 transition-all text-center"
+              >
+                Get In Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="serif text-3xl font-bold text-slate-800 mb-4">
+              How Can We Help?
+            </h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">
+              Want easier ways to manage your accounts? Got a tricky question
+              about tax? Looking to grow your business?
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div
+              class="p-8 bg-slate-50 border border-slate-100 rounded-lg hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">📈</div>
+              <h3 class="font-bold text-lg text-slate-800 mb-2">
+                Business Growth
+              </h3>
+              <p class="text-sm text-slate-500">
+                Corporate Finance, Turnaround and Restructuring strategies.
+              </p>
+            </div>
+
+            <div
+              class="p-8 bg-slate-50 border border-slate-100 rounded-lg hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">🎬</div>
+              <h3 class="font-bold text-lg text-slate-800 mb-2">
+                Media Specialists
+              </h3>
+              <p class="text-sm text-slate-500">
+                Specialized services for Film, TV, and Entertainment
+                professionals.
+              </p>
+            </div>
+
+            <div
+              class="p-8 bg-slate-50 border border-slate-100 rounded-lg hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">🌏</div>
+              <h3 class="font-bold text-lg text-slate-800 mb-2">
+                Global Reach
+              </h3>
+              <p class="text-sm text-slate-500">
+                International Tax, UAE VAT, and Global Film Rebates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY US SECTION ===== -->
+    <section>
+      <div class="bg-slate-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="serif text-3xl font-bold text-slate-900 mb-4">
+              Why Choose Us
+            </h2>
+            <p class="text-slate-600 max-w-3xl mx-auto">
+              Our strength lies in deep industry knowledge, long-standing
+              experience, and a highly personalised approach to every client
+              engagement.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-8 border border-slate-200 rounded-lg">
+              <h3 class="font-bold text-lg text-slate-800 mb-3">
+                Legacy & Experience
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Established in 1983, we bring over four decades of professional
+                experience across accounting, taxation, and advisory services.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 border border-slate-200 rounded-lg">
+              <h3 class="font-bold text-lg text-slate-800 mb-3">
+                Media & Entertainment Expertise
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                We are pioneers in financial services for the media and
+                entertainment industry, with in-depth understanding of its
+                unique financial structures.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 border border-slate-200 rounded-lg">
+              <h3 class="font-bold text-lg text-slate-800 mb-3">
+                Personalised Advisory
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Every client receives customised advice tailored to their
+                personal or business objectives, not generic solutions.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 border border-slate-200 rounded-lg">
+              <h3 class="font-bold text-lg text-slate-800 mb-3">
+                End-to-End Solutions
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                From compliance and audits to strategic planning and
+                international taxation, we provide comprehensive financial
+                solutions under one roof.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOMEPAGE CONTACT FORM ===== -->
+    <section>
+      <div class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <!-- LEFT CONTENT -->
+            <div>
+              <span
+                class="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-2 block"
+              >
+                Get in Touch
+              </span>
+              <h2
+                class="serif text-3xl lg:text-4xl font-bold text-slate-900 mb-6"
+              >
+                Let’s Start a Conversation
+              </h2>
+              <p class="text-slate-600 leading-relaxed max-w-xl mb-8">
+                Whether you are looking for professional advice, compliance
+                support, or specialised services in Media & Entertainment, our
+                team is here to assist you.
+              </p>
+
+              <ul class="space-y-4 text-slate-700 text-sm">
+                <li class="flex items-start">
+                  <span
+                    class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"
+                  ></span>
+                  Personalised advisory tailored to your requirements
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"
+                  ></span>
+                  Experienced professionals with decades of expertise
+                </li>
+                <li class="flex items-start">
+                  <span
+                    class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"
+                  ></span>
+                  Confidential and professional handling of all enquiries
+                </li>
+              </ul>
+            </div>
+
+            <!-- FORM -->
+            <div
+              class="bg-slate-50 p-8 lg:p-10 rounded-lg border border-slate-200"
+            >
+              <h3 class="serif text-2xl font-bold text-slate-900 mb-2">
+                Send Us a Message
+              </h3>
+              <p class="text-slate-500 text-sm mb-8">
+                Please fill in the details below and we will get back to you.
+              </p>
+
+              <form
+                id="homeForm"
+                onsubmit="event.preventDefault(); showHomeFormMessage();"
+              >
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 mb-2"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      name="name"
+                      class="w-full px-4 py-3 bg-white border border-slate-300 rounded-sm focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 mb-2"
+                    >
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      class="w-full px-4 py-3 bg-white border border-slate-300 rounded-sm focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-6">
+                  <label class="block text-sm font-medium text-slate-700 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    name="email"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-sm focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition"
+                  />
+                </div>
+
+                <div class="mb-6">
+                  <label class="block text-sm font-medium text-slate-700 mb-2">
+                    Enquiry Type
+                  </label>
+                  <select
+                    name="service"
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-sm focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition"
+                  >
+                    <option>General Enquiry</option>
+                    <option>Audit & Accounting</option>
+                    <option>Taxation & GST</option>
+                    <option>Media & Entertainment Advisory</option>
+                    <option>Corporate Finance</option>
+                  </select>
+                </div>
+
+                <div class="mb-8">
+                  <label class="block text-sm font-medium text-slate-700 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    rows="4"
+                    name="message"
+                    required
+                    class="w-full px-4 py-3 bg-white border border-slate-300 rounded-sm focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 outline-none transition"
+                  ></textarea>
+                </div>
+                <div
+                  id="formLoading"
+                  class="hidden flex items-center gap-3 text-sm text-slate-600 mb-4"
+                >
+                  <svg
+                    class="animate-spin h-5 w-5 text-yellow-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      class="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      class="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  <span>Submitting your enquiry…</span>
+                </div>
+
+                <button
+                  id="submitBtn"
+                  type="submit"
+                  class="w-full bg-slate-900 text-white font-bold py-4 rounded-sm hover:bg-yellow-600 transition-colors uppercase tracking-widest text-sm"
+                >
+                  Submit Enquiry
+                </button>
+
+                <p
+                  id="home-form-success"
+                  class="hidden mt-4 text-sm text-green-600 font-medium"
+                >
+                  Thank you for reaching out. We will contact you shortly.
+                </p>
+                <p
+                  id="formSuccessMessage"
+                  class="hidden mt-4 text-sm font-medium text-green-700 bg-green-50 border border-green-200 rounded-md px-4 py-3"
+                >
+                  Thank you for reaching out. We will contact you shortly.
+                </p>
+
+                <p
+                  id="formErrorMessage"
+                  class="hidden mt-4 text-sm font-medium text-red-700 bg-red-50 border border-red-200 rounded-md px-4 py-3"
+                >
+                  Something went wrong. Please try again later.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <!-- ===== HEADER & FOOTER INJECTION ===== -->
+    <script>
+      const HEADER_HTML = `
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-24 items-center">
+
+      <a href="index.html" class="flex flex-col">
+        <span class="serif text-2xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">
+          Chartered Accountants
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex space-x-8 items-center">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="sectors.html" class="nav-link">Sectors</a>
+        <a href="meet-the-team.html" class="nav-link">Meet the Team</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html"
+           class="px-6 py-2.5 rounded-sm bg-slate-900 text-white text-sm font-medium hover:bg-yellow-600 transition-colors">
+          Contact Us
+        </a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+`;
+
+      const FOOTER_HTML = `
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- BRAND -->
+      <div>
+        <span class="serif text-xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+          Chartered Accountants with a legacy of trust since 1983, specialising in
+          Media & Entertainment, Corporate Finance, and Tax Advisory.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Quick Links
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li><a href="index.html" class="hover:text-yellow-600">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-600">About Us</a></li>
+          <li><a href="services.html" class="hover:text-yellow-600">Services</a></li>
+          <li><a href="sectors.html" class="hover:text-yellow-600">Sectors</a></li>
+          <li><a href="meet-the-team.html" class="hover:text-yellow-600">Meet the Team</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-600">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-600">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Services
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>Accounting & Audit</li>
+          <li>Taxation & GST</li>
+          <li>Corporate Finance</li>
+          <li>Media & Entertainment Advisory</li>
+          <li>International Tax</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Contact
+        </h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          618 Samartha Aishwarya,<br>
+          Lokhandwala Complex,<br>
+          Andheri West, Mumbai – 400 053
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          +91 98925 34746<br>
+          +91 98210 94493
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          anil.sekhri@gmail.com<br>
+          accounts@anilsekhri.com
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-100 pt-6 text-center text-xs text-slate-400">
+      © 2024 Anil Sekhri & Co. | Chartered Accountants | Mumbai, India
+    </div>
+
+  </div>
+</footer>
+`;
+
+      document.getElementById("site-header").innerHTML = HEADER_HTML;
+      document.getElementById("site-footer").innerHTML = FOOTER_HTML;
+    </script>
+    <script>
+      function showHomeFormMessage() {
+        document.getElementById("home-form-success").classList.remove("hidden");
+      }
+    </script>
+    <script>
+      document
+        .getElementById("homeForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const loading = document.getElementById("formLoading");
+          const successMsg = document.getElementById("formSuccessMessage");
+          const errorMsg = document.getElementById("formErrorMessage");
+          const submitBtn = document.getElementById("submitBtn");
+
+          successMsg.classList.add("hidden");
+          errorMsg.classList.add("hidden");
+
+          loading.classList.remove("hidden");
+          submitBtn.disabled = true;
+
+          const data = {
+            name: this.querySelector('[name="name"]').value,
+            email: this.querySelector('[name="email"]').value,
+            phone: this.querySelector('[name="phone"]').value,
+            service: this.querySelector('[name="service"]').value,
+            message: this.querySelector('[name="message"]').value,
+            source: "Homepage",
+          };
+
+          try {
+            const res = await fetch("http://localhost:5000/api/lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+              successMsg.classList.remove("hidden");
+              this.reset();
+            } else {
+              errorMsg.classList.remove("hidden");
+            }
+          } catch (err) {
+            errorMsg.classList.remove("hidden");
+          } finally {
+            loading.classList.add("hidden");
+            submitBtn.disabled = false;
+          }
+        });
+    </script>
+  </body>
+</html>

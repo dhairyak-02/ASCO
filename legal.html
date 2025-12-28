@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal | Anil Sekhri & Co.</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ca8a04;
+  transition: width 0.3s;
+}
+.nav-link:hover::after, .nav-active::after { width: 100%; }
+.nav-active { color: #0f172a; font-weight: 600; }
+</style>
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- ===== LEGAL SECTION (100% VERBATIM) ===== -->
+<section>
+  <div class="bg-slate-50 py-12 min-h-screen">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="serif text-3xl font-bold text-slate-900 mb-8">
+        Legal Information & Policies
+      </h2>
+
+      <div class="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden flex flex-col md:flex-row min-h-[500px]">
+
+        <div class="md:w-1/4 bg-slate-100 border-r border-slate-200">
+          <button onclick="loadLegal('privacy')" class="w-full text-left px-6 py-4 text-sm font-medium text-slate-600 hover:bg-white hover:text-yellow-600 border-b border-slate-200 transition-colors focus:bg-white focus:text-yellow-600">
+            Privacy Policy
+          </button>
+          <button onclick="loadLegal('terms')" class="w-full text-left px-6 py-4 text-sm font-medium text-slate-600 hover:bg-white hover:text-yellow-600 border-b border-slate-200 transition-colors focus:bg-white focus:text-yellow-600">
+            Terms & Conditions
+          </button>
+          <button onclick="loadLegal('cookies')" class="w-full text-left px-6 py-4 text-sm font-medium text-slate-600 hover:bg-white hover:text-yellow-600 border-b border-slate-200 transition-colors focus:bg-white focus:text-yellow-600">
+            Cookie Policy
+          </button>
+        </div>
+
+        <div class="md:w-3/4 p-8 md:p-12 overflow-y-auto max-h-[80vh]">
+          <div id="legal-content" class="prose prose-sm prose-slate max-w-none"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ===== LEGAL DATA (UNCHANGED) ===== -->
+<script>
+const legalData = {
+  privacy: {
+    title: "Privacy Policy",
+    content: `
+      <p><strong>Who we are:</strong> Our website address is: https://anilsekhri.com.</p>
+      <p class="mt-4"><strong>Comments:</strong> When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
+      <p class="mt-4"><strong>Cookies:</strong> If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment.</p>
+      <p class="mt-4"><strong>Embedded content:</strong> Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
+    `
+  },
+  terms: {
+    title: "Terms and Conditions",
+    content: `
+      <p><strong>Welcome to Anil Sekhri & Co.</strong></p>
+      <p class="mt-4">These terms and conditions outline the rules and regulations for the use of Anil Sekhri & Co.'s Website.</p>
+      <p class="mt-4">By accessing this website we assume you accept these terms and conditions. Do not continue to use Anil Sekhri & Co. if you do not agree to take all of the terms and conditions stated on this page.</p>
+      <p class="mt-4"><strong>License:</strong> Unless otherwise stated, Anil Sekhri & Co. and/or its licensors own the intellectual property rights for all material on Anil Sekhri & Co.. All intellectual property rights are reserved.</p>
+    `
+  },
+  cookies: {
+    title: "Cookie Policy",
+    content: `
+      <p><strong>What Are Cookies:</strong> As is common practice with almost all professional websites this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience.</p>
+      <p class="mt-4"><strong>Disabling Cookies:</strong> You can prevent the setting of cookies by adjusting the settings on your browser. Be aware that disabling cookies will affect the functionality of this and many other websites that you visit.</p>
+    `
+  }
+};
+
+function loadLegal(type) {
+  const data = legalData[type];
+  if (data) {
+    document.getElementById('legal-content').innerHTML = `
+      <h3 class="text-2xl font-bold text-slate-800 mb-6 serif">${data.title}</h3>
+      <div class="text-slate-600 leading-relaxed">${data.content}</div>
+    `;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadLegal('privacy');
+});
+</script>
+
+<!-- ===== HEADER & FOOTER INJECTION (SAME AS OTHER PAGES) ===== -->
+<script>
+const HEADER_HTML = `
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-24 items-center">
+
+      <a href="index.html" class="flex flex-col">
+        <span class="serif text-2xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">
+          Chartered Accountants
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex space-x-8 items-center">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="sectors.html" class="nav-link">Sectors</a>
+        <a href="meet-the-team.html" class="nav-link">Meet the Team</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html"
+           class="px-6 py-2.5 rounded-sm bg-slate-900 text-white text-sm font-medium hover:bg-yellow-600 transition-colors">
+          Contact Us
+        </a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+`;
+
+const FOOTER_HTML = `
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- BRAND -->
+      <div>
+        <span class="serif text-xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+          Chartered Accountants with a legacy of trust since 1983, specialising in
+          Media & Entertainment, Corporate Finance, and Tax Advisory.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Quick Links
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li><a href="index.html" class="hover:text-yellow-600">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-600">About Us</a></li>
+          <li><a href="services.html" class="hover:text-yellow-600">Services</a></li>
+          <li><a href="sectors.html" class="hover:text-yellow-600">Sectors</a></li>
+          <li><a href="meet-the-team.html" class="hover:text-yellow-600">Meet the Team</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-600">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-600">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Services
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>Accounting & Audit</li>
+          <li>Taxation & GST</li>
+          <li>Corporate Finance</li>
+          <li>Media & Entertainment Advisory</li>
+          <li>International Tax</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Contact
+        </h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          618 Samartha Aishwarya,<br>
+          Lokhandwala Complex,<br>
+          Andheri West, Mumbai – 400 053
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          +91 98925 34746<br>
+          +91 98210 94493
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          anil.sekhri@gmail.com<br>
+          accounts@anilsekhri.com
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-100 pt-6 text-center text-xs text-slate-400">
+      © 2024 Anil Sekhri & Co. | Chartered Accountants | Mumbai, India
+    </div>
+
+  </div>
+</footer>
+`;
+
+
+document.getElementById("site-header").innerHTML = HEADER_HTML;
+document.getElementById("site-footer").innerHTML = FOOTER_HTML;
+</script>
+
+</body>
+</html>

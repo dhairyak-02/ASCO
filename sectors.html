@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sectors | Anil Sekhri & Co.</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ca8a04;
+  transition: width 0.3s;
+}
+.nav-link:hover::after, .nav-active::after { width: 100%; }
+.nav-active { color: #0f172a; font-weight: 600; }
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+</style>
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- ===== SECTORS PAGE ===== -->
+<section>
+  <div class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- INTRO -->
+      <div class="max-w-3xl mb-16">
+        <h1 class="serif text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          Sector Expertise
+        </h1>
+        <p class="text-slate-600 leading-relaxed">
+          While Anil Sekhri & Company serves a diverse range of clients across industries, our core strength lies in deep sectoral expertise developed over four decades of professional practice. Our understanding of industry-specific financial structures enables us to deliver practical, compliant, and strategic solutions.
+        </p>
+      </div>
+
+      <!-- MEDIA & ENTERTAINMENT -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div>
+          <h2 class="serif text-3xl font-bold text-slate-900 mb-6">
+            Media & Entertainment
+          </h2>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Media and Entertainment has been the cornerstone of our practice since inception. We possess in-depth knowledge of the financial, contractual, and operational complexities unique to this sector, including fluctuating cash flows, royalty-based income structures, and project-driven accounting.
+          </p>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            Our firm has advised leading personalities and organisations across films, television, advertising, and digital media, ensuring financial discipline, tax efficiency, and regulatory compliance at every stage of production and distribution.
+          </p>
+
+          <ul class="space-y-4 text-slate-700 text-sm">
+            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"></span>Film production houses and studios</li>
+            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"></span>Television and OTT content producers</li>
+            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"></span>Actors, directors, writers, and performing artists</li>
+            <li class="flex items-start"><span class="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-3"></span>Advertising agencies and production service providers</li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+          <h3 class="font-bold text-slate-800 mb-4">Scope of Services</h3>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li>• Film budgeting, costing, and financial control</li>
+            <li>• Production accounting and audit</li>
+            <li>• Domestic and international taxation</li>
+            <li>• Global film rebate advisory</li>
+            <li>• Revenue recognition and royalty structuring</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CORPORATES -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div>
+          <h2 class="serif text-3xl font-bold text-slate-900 mb-6">
+            Corporates & SMEs
+          </h2>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            We advise corporates and small to medium enterprises across multiple industries, supporting them in achieving financial stability, regulatory compliance, and sustainable growth.
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Our approach combines technical expertise with a practical understanding of business realities, enabling informed decision-making at both operational and strategic levels.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li>• Statutory and internal audit</li>
+            <li>• Corporate taxation and GST advisory</li>
+            <li>• ROC and company law compliance</li>
+            <li>• Business restructuring and turnaround</li>
+            <li>• Financial reporting and MIS</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PRIVATE CLIENTS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div>
+          <h2 class="serif text-3xl font-bold text-slate-900 mb-6">
+            Private Clients & HNIs
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            We provide discreet and comprehensive advisory services to private clients and high net worth individuals, including professionals, entrepreneurs, and creative artists.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li>• Personal taxation and compliance</li>
+            <li>• Income structuring and advisory</li>
+            <li>• Wealth reporting and documentation</li>
+            <li>• Cross-border income matters</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- INTERNATIONAL -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+        <div>
+          <h2 class="serif text-3xl font-bold text-slate-900 mb-6">
+            International & UAE Advisory
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            We assist clients in navigating international tax and regulatory environments, with specific expertise in UAE VAT and cross-border advisory.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li>• UAE VAT registration and compliance</li>
+            <li>• Cross-border tax advisory</li>
+            <li>• International structuring</li>
+            <li>• Global income reporting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CLIENT COMPOSITION CHART -->
+      <div class="bg-slate-50 p-10 rounded-xl border border-slate-200">
+        <h3 class="text-center font-bold text-slate-800 mb-6">
+          Client Base Composition
+        </h3>
+        <div class="chart-wrapper">
+          <canvas id="sectorsChart"></canvas>
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-4 italic">
+          Visual representation of our industry focus areas.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ===== CHART SCRIPT ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('sectorsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Media & Entertainment', 'Corporate / SMEs', 'HNIs & Individuals', 'International'],
+      datasets: [{
+        data: [45, 30, 15, 10],
+        backgroundColor: ['#eab308', '#0f172a', '#64748b', '#cbd5e1'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+      }
+    }
+  });
+});
+</script>
+
+<!-- ===== HEADER & FOOTER INJECTION ===== -->
+<script>
+const HEADER_HTML = `
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-24 items-center">
+
+      <a href="index.html" class="flex flex-col">
+        <span class="serif text-2xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <span class="text-xs uppercase tracking-[0.2em] text-slate-500">
+          Chartered Accountants
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex space-x-8 items-center">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="sectors.html" class="nav-link">Sectors</a>
+        <a href="meet-the-team.html" class="nav-link">Meet the Team</a>
+        <a href="careers.html" class="nav-link">Careers</a>
+        <a href="contact.html"
+           class="px-6 py-2.5 rounded-sm bg-slate-900 text-white text-sm font-medium hover:bg-yellow-600 transition-colors">
+          Contact Us
+        </a>
+      </nav>
+
+    </div>
+  </div>
+</header>
+`;
+
+const FOOTER_HTML = `
+<footer class="bg-white border-t border-slate-200 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- BRAND -->
+      <div>
+        <span class="serif text-xl font-bold text-slate-900">
+          ANIL SEKHRI <span class="text-yellow-600">& COMPANY</span>
+        </span>
+        <p class="mt-4 text-sm text-slate-500 leading-relaxed">
+          Chartered Accountants with a legacy of trust since 1983, specialising in
+          Media & Entertainment, Corporate Finance, and Tax Advisory.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Quick Links
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li><a href="index.html" class="hover:text-yellow-600">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-600">About Us</a></li>
+          <li><a href="services.html" class="hover:text-yellow-600">Services</a></li>
+          <li><a href="sectors.html" class="hover:text-yellow-600">Sectors</a></li>
+          <li><a href="meet-the-team.html" class="hover:text-yellow-600">Meet the Team</a></li>
+          <li><a href="careers.html" class="hover:text-yellow-600">Careers</a></li>
+          <li><a href="contact.html" class="hover:text-yellow-600">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Services
+        </h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>Accounting & Audit</li>
+          <li>Taxation & GST</li>
+          <li>Corporate Finance</li>
+          <li>Media & Entertainment Advisory</li>
+          <li>International Tax</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="font-bold text-slate-900 mb-4">
+          Contact
+        </h4>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          618 Samartha Aishwarya,<br>
+          Lokhandwala Complex,<br>
+          Andheri West, Mumbai – 400 053
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          +91 98925 34746<br>
+          +91 98210 94493
+        </p>
+        <p class="mt-3 text-sm text-slate-600">
+          anil.sekhri@gmail.com<br>
+          accounts@anilsekhri.com
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t border-slate-100 pt-6 text-center text-xs text-slate-400">
+      © 2024 Anil Sekhri & Co. | Chartered Accountants | Mumbai, India
+    </div>
+
+  </div>
+</footer>
+`;
+
+
+document.getElementById("site-header").innerHTML = HEADER_HTML;
+document.getElementById("site-footer").innerHTML = FOOTER_HTML;
+</script>
+
+</body>
+</html>
