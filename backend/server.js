@@ -4,10 +4,17 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 
 const app = express();
+
+/* ===== Middleware ===== */
 app.use(cors());
 app.use(express.json());
 
-/* Email config (Brevo / Gmail / etc.) */
+/* ===== Health Check (optional but recommended) ===== */
+app.get("/", (req, res) => {
+  res.send("ASCO Backend is running");
+});
+
+/* ===== Email Configuration ===== */
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: 587,
@@ -18,7 +25,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-/* Form endpoint */
+/* ===== Lead API ===== */
 app.post("/api/lead", async (req, res) => {
   const { name, email, phone, service, message, source } = req.body;
 
@@ -28,25 +35,23 @@ app.post("/api/lead", async (req, res) => {
       to: process.env.ADMIN_EMAIL,
       subject: `New Lead from ${source}`,
       html: `
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Service:</b> ${service}</p>
-        <p><b>Message:</b><br>${message}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Message:</strong><br>${message}</p>
+        <p><strong>Source:</strong> ${source}</p>
       `
     });
 
     res.json({ success: true });
-  } catch (err) {
-    console.error(err);
+  } catch (error) {
+    console.error("Email error:", error);
     res.status(500).json({ success: false });
   }
 });
 
-/* Start server */
+/* ===== Server Start ===== */
 app.listen(process.env.PORT || 5000, () => {
-  console.log("Backend running");
-});
-app.get("/", (req, res) => {
-  res.send("ASCO Backend is running");
+  console.log("Backend server running");
 });
