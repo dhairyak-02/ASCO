@@ -1,8 +1,24 @@
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+
+const app = express();
+
+/* ================= MIDDLEWARE ================= */
+app.use(cors());
+app.use(express.json());
+
+/* ================= HEALTH CHECK ================= */
+app.get("/", (req, res) => {
+  res.send("ASCO Backend is running");
+});
+
+/* ================= LEAD API ================= */
 app.post("/api/lead", async (req, res) => {
   const { name, email, phone, service, message, source } = req.body;
 
   try {
-    /* ================= ADMIN EMAIL ================= */
+    /* ========== ADMIN EMAIL ========== */
     const adminResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
@@ -36,7 +52,7 @@ app.post("/api/lead", async (req, res) => {
       return res.status(500).json({ success: false });
     }
 
-    /* ================= AUTO-REPLY TO USER ================= */
+    /* ========== AUTO-REPLY TO USER ========== */
     const userResponse = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
       headers: {
@@ -58,7 +74,7 @@ app.post("/api/lead", async (req, res) => {
 
           <p>Thank you for contacting <strong>Anil Sekhri & Company</strong>.</p>
 
-          <p>We have received your enquiry and our team will review the details and get back to you shortly.</p>
+          <p>We have received your enquiry and our team will get back to you shortly.</p>
 
           <p>If your matter is urgent, please feel free to reply to this email.</p>
 
@@ -72,7 +88,7 @@ app.post("/api/lead", async (req, res) => {
     if (!userResponse.ok) {
       const error = await userResponse.text();
       console.error("Auto-reply failed:", error);
-      // Note: admin email already sent, so we still return success
+      // Do NOT fail request – admin email already sent
     }
 
     res.json({ success: true });
@@ -81,4 +97,9 @@ app.post("/api/lead", async (req, res) => {
     console.error("SERVER ERROR:", err);
     res.status(500).json({ success: false });
   }
+});
+
+/* ================= START SERVER ================= */
+app.listen(process.env.PORT || 5000, () => {
+  console.log("Backend server running");
 });
