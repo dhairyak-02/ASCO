@@ -47,3 +47,6 @@ app.post("/api/lead", async (req, res) => {
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend running");
 });
+app.get("/", (req, res) => {
+  res.send("ASCO Backend is running");
+});
